@@ -1,11 +1,20 @@
 // sending bitcoin
 const axios = require("axios");
 const bitcore = require("bitcore-lib");
-var https = require("https");
+const express = require('express');
+const cors = require("cors")
 
+const app = express();
+const port = 4000;
 
-module.exports = sendPayment = async (fruit_type, quantity) => {
+app.use(express.json());
+app.use(cors())
+
+app.get('/generate', async (request, response) => {
   try {
+
+    const fruit_type = request.query.fruit_type
+    const quantity = request.query.quantity
 
     // Fruits available in the shop
     const fruits = {
@@ -15,15 +24,15 @@ module.exports = sendPayment = async (fruit_type, quantity) => {
       },
       "bananas": {
           "address": "tb1q0f8t6cf8hha6tt43arv6nrpln4p3u8ql96g6em",
-          "price": 0.0005
+          "price": 0.0003
       },
       "oranges": {
           "address": "tb1qsyvek8a3lhzy8j3c3mp84xy9cdy627q2f2pxe",
-          "price": 0.0006
+          "price": 0.0004
       },
       "strawberries": {
           "address": "tb1q3ctrpkl58shfy5hpapgc9km8wx69y5m68350ft",
-          "price": 0.0008
+          "price": 0.0005
       }
   };
   // Retrieve the wallet address and price for the specified fruit
@@ -58,24 +67,24 @@ module.exports = sendPayment = async (fruit_type, quantity) => {
         method: 'GET',
         headers: {
           "Content-Type": "application/json",
-          'x-api-key': 'put your api key here'
+          'x-api-key': 'a869f21056f3330f5ae1faf63ab67d57fe0fbee7'
         }
       }
     );
     
-    const txHash = await txResponse.data.data.items[0].transactionId;
-    const Txindex = await txResponse.data.data.items[0].index;
+    const txHash = await txResponse.data.data.items[3].transactionId;
+    const Txindex = await txResponse.data.data.items[3].index;
     //console.log(txHash)
     //console.log(Txindex)
 
    // Get the full unspent outputs(UTXO) from tatum api after receiving the hash and index
 
-    const response = await axios.get(
+    const utxresponse = await axios.get(
       `https://api.tatum.io/v3/bitcoin/utxo/${txHash}/${Txindex}`,
       {
         method: 'GET',
         headers: {
-          'x-api-key': 'put your api key'
+          'x-api-key': 'cb661431-9d1f-47c4-9063-70fb4e5fdcb5'
         }
       }
     );
@@ -84,8 +93,8 @@ module.exports = sendPayment = async (fruit_type, quantity) => {
     let totalAmountAvailable = 0;
 
     let inputs = [];
-    let utxos = response.data;
-    console.log(utxos)
+    let utxos = utxresponse.data;
+    //console.log(utxos)
     
     // Build and arrange the utxo from the unspent outputs received above from Tatum api.
       let utxo = {};
@@ -98,7 +107,7 @@ module.exports = sendPayment = async (fruit_type, quantity) => {
 
       // Push the arranged utxo to the utxo array
       inputs.push(utxo);
-      //console.log(utxo)
+      console.log(utxo)
       
     //Set transaction input
     transaction.from(inputs);
@@ -130,7 +139,7 @@ module.exports = sendPayment = async (fruit_type, quantity) => {
       "qs": {"context":"yourExampleString"},
       "headers": {
         "Content-Type": "application/json",
-        "X-API-Key": "put your api key here"
+        "X-API-Key": "a869f21056f3330f5ae1faf63ab67d57fe0fbee7"
       }
     };
     
@@ -143,7 +152,8 @@ module.exports = sendPayment = async (fruit_type, quantity) => {
     
       res.on("end", function () {
         var body = Buffer.concat(chunks);
-        console.log(body.toString());
+        var transactionId = JSON.parse(body.toString()).data.item.transactionId;
+        response.send({transactionId: transactionId});
       });
     });
     
@@ -158,6 +168,9 @@ module.exports = sendPayment = async (fruit_type, quantity) => {
     
     req.end();
 
+
+  
+
     // Output a message with the payment details
   console.log(`Payment of ${total_cost} BTC for ${quantity} ${fruit_type} sent to ${recieverAddress}.`);
     
@@ -166,4 +179,9 @@ module.exports = sendPayment = async (fruit_type, quantity) => {
     return error;
   }
     
-};
+});
+
+app.listen(port, () => {
+    console.log(`Server listening at http://localhost:${port}`);
+});
+
