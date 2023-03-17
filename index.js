@@ -16,7 +16,7 @@ app.get('/generate', async (request, response) => {
     const fruit_type = request.query.fruit_type
     const quantity = request.query.quantity
 
-    // Fruits available in the sho
+    // Fruits available in the shop
     const fruits = {
       "apples": {
           "address": "tb1qsyvek8a3lhzy8j3c3mp84xy9cdy627q2f2pxef",
