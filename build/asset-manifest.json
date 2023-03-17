@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/Bitcoin-Transactions/static/css/main.e2cd13a2.chunk.css",
-    "main.js": "/Bitcoin-Transactions/static/js/main.3e441c4a.chunk.js",
-    "main.js.map": "/Bitcoin-Transactions/static/js/main.3e441c4a.chunk.js.map",
+    "main.js": "/Bitcoin-Transactions/static/js/main.5255a503.chunk.js",
+    "main.js.map": "/Bitcoin-Transactions/static/js/main.5255a503.chunk.js.map",
     "runtime-main.js": "/Bitcoin-Transactions/static/js/runtime-main.09cfc856.js",
     "runtime-main.js.map": "/Bitcoin-Transactions/static/js/runtime-main.09cfc856.js.map",
     "static/js/2.4434f604.chunk.js": "/Bitcoin-Transactions/static/js/2.4434f604.chunk.js",
@@ -15,6 +15,6 @@
     "static/js/runtime-main.09cfc856.js",
     "static/js/2.4434f604.chunk.js",
     "static/css/main.e2cd13a2.chunk.css",
-    "static/js/main.3e441c4a.chunk.js"
+    "static/js/main.5255a503.chunk.js"
   ]
 }
