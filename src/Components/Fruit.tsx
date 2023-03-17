@@ -95,7 +95,7 @@ export const Fruitpayment = () => {
 
 
   const sendFruitDetails = async () => {
-    const response = await fetch(` https://btc-backend-ywk8.onrender.com/generate?fruit_type=${fruitType}&quantity=${count}`, { method: "GET" })
+    const response = await fetch(` https://btcbackend.onrender.com/generate?fruit_type=${fruitType}&quantity=${count}`, { method: "GET" })
     const data = await response.json();
     setTransactionId(data.transactionId);
     console.log(transactionId)
