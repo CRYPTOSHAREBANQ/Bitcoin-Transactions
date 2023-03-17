@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/EthereumSmartContracts/static/css/main.e2cd13a2.chunk.css",
-    "main.js": "/EthereumSmartContracts/static/js/main.39669a9b.chunk.js",
-    "main.js.map": "/EthereumSmartContracts/static/js/main.39669a9b.chunk.js.map",
-    "runtime-main.js": "/EthereumSmartContracts/static/js/runtime-main.318a869c.js",
-    "runtime-main.js.map": "/EthereumSmartContracts/static/js/runtime-main.318a869c.js.map",
-    "static/js/2.469bf572.chunk.js": "/EthereumSmartContracts/static/js/2.469bf572.chunk.js",
-    "static/js/2.469bf572.chunk.js.map": "/EthereumSmartContracts/static/js/2.469bf572.chunk.js.map",
-    "index.html": "/EthereumSmartContracts/index.html",
-    "static/css/main.e2cd13a2.chunk.css.map": "/EthereumSmartContracts/static/css/main.e2cd13a2.chunk.css.map",
-    "static/js/2.469bf572.chunk.js.LICENSE.txt": "/EthereumSmartContracts/static/js/2.469bf572.chunk.js.LICENSE.txt"
+    "main.css": "/Bitcoin-Transactions/static/css/main.e2cd13a2.chunk.css",
+    "main.js": "/Bitcoin-Transactions/static/js/main.3e441c4a.chunk.js",
+    "main.js.map": "/Bitcoin-Transactions/static/js/main.3e441c4a.chunk.js.map",
+    "runtime-main.js": "/Bitcoin-Transactions/static/js/runtime-main.09cfc856.js",
+    "runtime-main.js.map": "/Bitcoin-Transactions/static/js/runtime-main.09cfc856.js.map",
+    "static/js/2.4434f604.chunk.js": "/Bitcoin-Transactions/static/js/2.4434f604.chunk.js",
+    "static/js/2.4434f604.chunk.js.map": "/Bitcoin-Transactions/static/js/2.4434f604.chunk.js.map",
+    "index.html": "/Bitcoin-Transactions/index.html",
+    "static/css/main.e2cd13a2.chunk.css.map": "/Bitcoin-Transactions/static/css/main.e2cd13a2.chunk.css.map",
+    "static/js/2.4434f604.chunk.js.LICENSE.txt": "/Bitcoin-Transactions/static/js/2.4434f604.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.318a869c.js",
-    "static/js/2.469bf572.chunk.js",
+    "static/js/runtime-main.09cfc856.js",
+    "static/js/2.4434f604.chunk.js",
     "static/css/main.e2cd13a2.chunk.css",
-    "static/js/main.39669a9b.chunk.js"
+    "static/js/main.3e441c4a.chunk.js"
   ]
 }

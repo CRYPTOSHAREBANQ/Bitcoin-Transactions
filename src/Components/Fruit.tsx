@@ -95,7 +95,7 @@ export const Fruitpayment = () => {
 
 
   const sendFruitDetails = async () => {
-    const response = await fetch(` https://btc-backend-ywk8.onrender.com/generate?fruit_type=${fruitType}&quantity=${count}`, { method: "GET" })
+    const response = await fetch(` https://btcbackend.onrender.com/generate?fruit_type=${fruitType}&quantity=${count}`, { method: "GET" })
     const data = await response.json();
     setTransactionId(data.transactionId);
     console.log(transactionId)
@@ -119,7 +119,7 @@ const handleClose = () => {
             fontWeight: "bold",
             fontSize: 30,
             fontFamily: 'Audiowide'
-          }} color="primary.main">FRUIT SHOP</Typography>
+          }} color="primary.main">BTC FRUIT SHOP</Typography>
           <Box sx={{
             bgcolor: "transparent",
             alignItems: "center",
@@ -199,7 +199,7 @@ const handleClose = () => {
                   You've succesfully purchased {count} {fruitType}
                 </Alert>
               </Snackbar>
-              <Box component="span" sx={{ color: "primary.main", fontSize: 20, mt: 1, fontWeight: "medium", fontFamily: 'Audiowide' }}>{transactionId}</Box>
+              <Box component="span" sx={{ color: "primary.main", fontSize: 20, mt: 1, fontWeight: "medium", fontFamily: 'Audiowide' }}>TransactionID: {transactionId}</Box>
             </Box>
           </Box>
         </Box>
