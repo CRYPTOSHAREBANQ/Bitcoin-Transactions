@@ -35,7 +35,7 @@ In P2PKH transactions, the scriptPubKey in the output is a standard script that 
 
 Example of a P2PKH script in Bitcoin Script:
 
-> OP_DUP OP_HASH160 <20-byte public key hash> OP_EQUALVERIFY OP_CHECKSIG
+> OP_DUP OP_HASH160 <20-byte public key hash> OP_EQUALVERIFY OP_CHECKSIG.
 
 This script specifies that the transaction can only be spent by someone who provides a digital signature using the private key corresponding to the provided public key hash.
 
